@@ -1,0 +1,17 @@
+@import "./variables.scss";
+
+@function set-button-color($color) {
+  @if (lightness($color) > 50) {
+    @return $white; // Lighter color, return black
+  } @else {
+    @return $black; // Darker color, return white
+  }
+}
+
+@function set-button-bg($color) {
+  @if (lightness($color) > 50) {
+    @return $peach; // Lighter color, return black
+  } @else {
+    @return $white; // Darker color, return white
+  }
+}

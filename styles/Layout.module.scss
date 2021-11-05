@@ -1,4 +1,19 @@
+@import "./variables.scss";
+
 .container {
-  min-height: 100vh;
-  height: 100vh;
+  padding: 0 24px;
+  max-width: $desktop-max;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .container {
+    padding: 0 39px 0;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .container {
+    padding: 0 165px 0;
+  }
 }

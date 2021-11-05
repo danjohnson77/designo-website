@@ -1,0 +1,194 @@
+@import "./variables.scss", "./mixins.scss";
+
+.header {
+  @include flex(row, space-between, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: $mobile-header-pad-y $mobile-gutters;
+  background-color: $white;
+  .logo {
+    display: flex;
+    .circle {
+      position: relative;
+      min-width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 90deg at 50% 50%,
+          rgba(231, 129, 107, 0.0001) 0deg,
+          #e7816b 359.74deg,
+          rgba(231, 129, 107, 0.0001) 360deg
+        );
+        transform: matrix(0, -1, -1, 0, 0, 0);
+      }
+    }
+
+    h1 {
+      font-family: $header-font;
+      font-size: 24px;
+      line-height: 26.88px;
+      letter-spacing: 5px;
+      color: $black;
+    }
+  }
+  .toggle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    input[type="checkbox"],
+    svg {
+      position: absolute;
+      top: $mobile-header-pad-y;
+      right: $mobile-gutters;
+    }
+
+    svg {
+      &.close {
+        display: none;
+      }
+    }
+
+    input[type="checkbox"] {
+      width: 24px;
+      height: 20px;
+      margin: 0;
+      opacity: 0;
+      z-index: 3;
+      &:checked {
+        & ~ svg.close {
+          display: inline;
+        }
+        & ~ svg.hamburger {
+          display: none;
+        }
+
+        & ~ nav {
+          left: 0;
+          opacity: 1;
+          ul {
+            li {
+              a {
+                opacity: 1;
+              }
+            }
+          }
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    position: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $white;
+    top: $mobile-nav-y-offset;
+    left: -100vw;
+    width: 100%;
+    transition: all $nav-open-timing 0ms ease;
+
+    &::after {
+      content: "";
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      opacity: 0;
+    }
+    ul {
+      height: $mobile-nav-height;
+      background-color: $black;
+      padding: 48px 24px;
+
+      li {
+        @for $i from 1 through $nav-length {
+          &:nth-of-type(#{$i}) {
+            a {
+              transition-delay: #{$i * $nav-link-stagger}ms;
+            }
+          }
+        }
+        a {
+          color: inherit;
+          opacity: 0;
+          transition: all $nav-open-timing ease;
+        }
+      }
+      li:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .header {
+    padding: $tablet-header-pad-y $tablet-gutters;
+    .toggle {
+      position: relative;
+      width: auto;
+      height: auto;
+      input[type="checkbox"],
+      svg {
+        display: none;
+      }
+      nav {
+        display: block;
+        position: relative;
+        background-color: $white;
+        color: $black;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        &::after {
+          display: none;
+        }
+
+        ul {
+          height: auto;
+          background-color: inherit;
+          padding: 0;
+          @include flex(row, space-between, center);
+          li {
+            a {
+              opacity: 1;
+              color: $black;
+              font-size: 14px;
+              line-height: 14px;
+              text-decoration: underline 1px rgba(29, 28, 30, 0);
+              transition: text-decoration-color $hover-timing;
+              height: 100%;
+              &:hover {
+                text-decoration-color: rgba(29, 28, 30, 1);
+              }
+            }
+          }
+          li:not(:last-child) {
+            margin-bottom: 0;
+            margin-right: 42px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .header {
+    padding: $tablet-header-pad-y $desktop-gutters;
+  }
+}

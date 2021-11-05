@@ -1,14 +1,41 @@
-// BREAKPOINTS
-$tablet-breakpoint: 600px;
+// BREAKPOINTS AND DIMENSIONS
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1100px;
+
+$desktop-max: 1440px;
+
+$mobile-gutters: 24px;
+$tablet-gutters: 39px;
+$desktop-gutters: 165px;
 
 // COLORS
-$background-color: #fff;
-$text-color: #000;
+$peach: hsl(11deg, 73%, 66%);
+$black: hsl(270deg, 3%, 11%);
+$white: hsl(0deg, 0%, 100%);
+
+$light-peach: hsl(11deg, 100%, 80%);
+$dark-grey: hsl(264deg, 5%, 20%);
+$light-grey: hsl(210deg, 17%, 95%);
 
 // FONTS
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+$primary-font: "Jost", sans-serif;
+$header-font: "Spartan", sans-serif;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+// COMMON SETTINGS
+$border-radius: 8px;
+$hover-timing: 300ms;
 
-$header-font: "Montserrat", sans-serif;
+// MOBILE NAV
+$nav-open-timing: 500ms;
+$nav-link-stagger: 100;
+$nav-link-offsetX: -24px;
+$nav-length: 3; //UPDATE THIS IF A NAV LINK IS ADDED
+
+$mobile-header-pad-y: 34.5px;
+$tablet-header-pad-y: 64px;
+
+$mobile-nav-height: 235px;
+$mobile-nav-y-offset: 96px;
