@@ -1,0 +1,21 @@
+@import "./variables.scss", "./mixins.scss";
+
+.socials {
+  @include flex(row, space-between, center);
+  margin-top: 40px;
+  li {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &:hover {
+      svg {
+        path {
+          transition: all $hover-timing ease;
+          fill: $light-peach;
+        }
+      }
+    }
+  }
+}

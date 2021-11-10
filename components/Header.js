@@ -1,17 +1,11 @@
 import styles from "../styles/Header.module.scss";
+import Logo from "./Logo";
 import Nav from "./Nav";
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <a href="/" style={{ display: "block" }}>
-        <div className={styles.logo}>
-          <span className={styles.circle}>
-            <span></span>
-          </span>
-          <h1>DESIGNO</h1>
-        </div>
-      </a>
+      <Logo />
       <div className={styles.toggle}>
         <input type="checkbox" name="toggle" />
         <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg" className={styles.hamburger}>

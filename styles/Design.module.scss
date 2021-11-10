@@ -1,0 +1,91 @@
+@import "./variables.scss", "./mixins.scss";
+
+.hero {
+  padding: 105px $mobile-gutters;
+  position: relative;
+  z-index: 1;
+
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 208px);
+    height: 100%;
+    top: 0;
+    left: -208px;
+    z-index: 0;
+    background-image: url("/bg/design/mobile/bg-pattern-design-pages-intro-mobile.svg");
+  }
+}
+
+.card {
+  margin: 0 $mobile-gutters;
+  @include flex(column, center, center);
+  border-radius: 15px;
+  overflow: hidden;
+  .text {
+    order: 2;
+    text-align: center;
+    background-color: #fdf3f0;
+    padding: 32px;
+    min-width: 100%;
+    h3 {
+      color: $peach;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+  }
+  img {
+    max-width: 100%;
+    order: 1;
+  }
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .hero {
+    border-radius: 15px;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 310px;
+    margin: 0;
+    .text {
+      text-align: center;
+      background-color: #fdf3f0;
+      padding: 109px 41px;
+      height: 100%;
+
+      h3 {
+        color: $peach;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+    }
+
+    img {
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .projectList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    grid-template-columns: 1fr;
+    max-height: unset;
+    .text {
+      padding: 32px;
+    }
+  }
+}

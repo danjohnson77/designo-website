@@ -1,19 +1,57 @@
-@import "./variables.scss";
+@import "./variables.scss", "./mixins.scss";
 
 .container {
-  padding: 0 24px;
   max-width: $desktop-max;
+  position: relative;
   margin: 0 auto;
+}
+
+.outerGrid {
+  display: grid;
+  gap: 120px;
+  grid-template-columns: 1fr;
+}
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.about,
+.traits {
+  margin: 0 $mobile-gutters;
+}
+
+.traits {
+  @include flex(column, center, center);
 }
 
 @media screen and (min-width: $tablet-breakpoint) {
   .container {
-    padding: 0 39px 0;
+    padding: 0 $tablet-gutters 0;
+  }
+
+  .about,
+  .traits {
+    margin: 0;
   }
 }
 
 @media screen and (min-width: $desktop-breakpoint) {
   .container {
-    padding: 0 165px 0;
+    padding: 0 $desktop-gutters 0;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 0 24px;
+  }
+
+  .traits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }

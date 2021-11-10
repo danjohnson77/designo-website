@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-const Nav = () => {
+const Nav = ({ styleProp = null }) => {
   return (
-    <nav>
+    <nav className={styleProp}>
       <ul>
         <li>
           <Link href="/about">OUR COMPANY</Link>

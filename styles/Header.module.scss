@@ -5,39 +5,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: $desktop-max;
   padding: $mobile-header-pad-y $mobile-gutters;
   background-color: $white;
-  .logo {
-    display: flex;
-    .circle {
-      position: relative;
-      min-width: 24px;
-      height: 24px;
-      margin-right: 16px;
-      span {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: conic-gradient(
-          from 90deg at 50% 50%,
-          rgba(231, 129, 107, 0.0001) 0deg,
-          #e7816b 359.74deg,
-          rgba(231, 129, 107, 0.0001) 360deg
-        );
-        transform: matrix(0, -1, -1, 0, 0, 0);
-      }
-    }
-
-    h1 {
-      font-family: $header-font;
-      font-size: 24px;
-      line-height: 26.88px;
-      letter-spacing: 5px;
-      color: $black;
-    }
+  z-index: 100;
+  a {
+    color: $black;
+    z-index: 101;
   }
+
   .toggle {
     position: absolute;
     width: 100%;
@@ -190,5 +167,12 @@
 @media screen and (min-width: $desktop-breakpoint) {
   .header {
     padding: $tablet-header-pad-y $desktop-gutters;
+  }
+}
+
+@media screen and (min-width: $desktop-max) {
+  .header {
+    right: 0;
+    margin: 0 auto;
   }
 }

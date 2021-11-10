@@ -1,0 +1,10 @@
+@import "./variables.scss", "./mixins.scss";
+
+.hero {
+  background-color: $peach;
+
+  color: $white;
+  overflow: hidden;
+  text-align: center;
+  max-height: 843px;
+}

@@ -1,0 +1,227 @@
+@import "./variables.scss", "./mixins.scss";
+
+.footer {
+  color: $white;
+  background: linear-gradient(to top, $black 0%, $black 80%, $white 80%, $white 100%);
+
+  .top,
+  .bottom {
+    max-width: $desktop-max;
+    margin: 0 auto;
+  }
+
+  .top {
+    .action {
+      background-color: $peach;
+      position: relative;
+      margin: 0 $mobile-gutters;
+      padding: 64px $mobile-gutters;
+      text-align: center;
+      border-radius: 15px;
+      overflow: hidden;
+      z-index: 2;
+      &::after {
+        content: "";
+        width: 876px;
+        height: 584px;
+        position: absolute;
+        background-image: url("/bg/home/desktop/bg-pattern-call-to-action.svg");
+        top: -86px;
+        left: -240px;
+        background-repeat: no-repeat;
+        z-index: 0;
+
+        background-position: center;
+      }
+
+      h2 {
+        font-size: 32px;
+        line-height: 36px;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 32px 0;
+      }
+
+      h2,
+      p,
+      button {
+        position: relative;
+        z-index: 3;
+      }
+    }
+  }
+
+  .bottom {
+    background-color: $black;
+    @include flex(column, center, center);
+    text-align: center;
+    padding: 64px 0;
+    div:first-child {
+      width: 100%;
+      @include flex(column, center, center);
+      .footerLogo {
+        div {
+          @include flex(row, center);
+        }
+        width: 100%;
+      }
+
+      .line {
+        content: "";
+        display: block;
+        height: 1px;
+        opacity: 0.1;
+        width: 100%;
+        background-color: $white;
+        margin: 32px 0;
+      }
+
+      a {
+        color: $white;
+      }
+
+      nav {
+        ul {
+          li {
+            &:not(:last-child) {
+              margin-bottom: 32px;
+            }
+            a {
+              font-size: 14px;
+              font-weight: 400;
+
+              text-decoration: underline 1px rgba(255, 255, 255, 0);
+              transition: text-decoration-color $hover-timing;
+              height: 100%;
+              &:hover {
+                text-decoration-color: rgba(255, 255, 255, 0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    div:last-child {
+      @include flex(column, center, center);
+      address {
+        .strong {
+          font-weight: 700;
+        }
+        opacity: 0.5;
+        mix-blend-mode: normal;
+        div {
+          margin-top: 40px;
+        }
+        a {
+          font-size: inherit;
+          display: block;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .footer {
+    background: linear-gradient(to top, $black 0%, $black 65%, $white 65%, $white 100%);
+    .top {
+      .action {
+        &::after {
+          top: -117px;
+          left: -20px;
+        }
+        padding: 80px $tablet-gutters;
+        margin: 0 $tablet-gutters;
+      }
+    }
+
+    .bottom {
+      div {
+        width: 100%;
+      }
+
+      padding: 80px $tablet-gutters;
+      div:first-child {
+        @include flex(row, space-between, center);
+        flex-wrap: wrap;
+
+        .footerLogo {
+          width: auto;
+        }
+
+        .line {
+          order: 3;
+        }
+
+        nav {
+          ul {
+            @include flex(row, space-evenly, center);
+            li {
+              &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: 42px;
+              }
+              a {
+              }
+            }
+          }
+        }
+      }
+      div:last-child {
+        @include flex(row, space-between, center);
+
+        address {
+          @include flex(row, space-between, center);
+          .strong {
+            font-weight: 700;
+          }
+          opacity: 0.5;
+          mix-blend-mode: normal;
+          flex-grow: 1;
+          div {
+            margin-top: 0;
+            @include flex(column, center, flex-start);
+          }
+          a {
+            font-size: inherit;
+            display: block;
+            color: $white;
+          }
+        }
+
+        ul {
+          align-self: flex-end;
+          justify-self: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .footer {
+    .top {
+      .action {
+        @include flex(row, space-between, center);
+        padding: 72px 96px;
+        margin: 0 $desktop-gutters;
+        &::after {
+          top: -146px;
+          left: 235px;
+        }
+      }
+      div {
+        @include flex(column, center, flex-start);
+        text-align: left;
+      }
+    }
+
+    .bottom {
+      padding: 80px $desktop-gutters;
+    }
+  }
+}
