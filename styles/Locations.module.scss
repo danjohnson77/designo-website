@@ -1,0 +1,152 @@
+@import "./variables.scss", "./mixins.scss";
+
+.locations {
+  display: grid;
+  gap: 80px;
+  section {
+    @include flex(column, center, center);
+    text-align: center;
+    h3 {
+      order: 2;
+      margin: 48px 0 32px;
+    }
+    .imgWrap {
+      position: relative;
+
+      div {
+        @include circleBg;
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+
+    button {
+      order: 3;
+    }
+  }
+}
+
+.main {
+  display: grid;
+  gap: 40px 0;
+}
+
+.card {
+  @include flex(column, center, center);
+
+  .text {
+    order: 2;
+    padding: 80px 0;
+
+    address {
+      div {
+        &:first-child {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+  .image {
+    order: 1;
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    &.canada {
+      background-image: url("/images/locations/desktop/image-map-canada.png");
+    }
+    &.australia {
+      background-image: url("/images/locations/desktop/image-map-australia.png");
+    }
+    &.uk {
+      background-image: url("/images/locations/desktop/image-map-united-kingdom.png");
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .main {
+    gap: 120px;
+  }
+  .card {
+    background-color: transparent;
+
+    .text {
+      background-color: $card-bg;
+      width: 100%;
+      margin-top: 24px;
+      border-radius: 15px;
+      text-align: left;
+      padding: 75px 88px;
+      address {
+        div {
+          &:first-child {
+            margin-bottom: 0;
+            width: 255px;
+            margin-right: 30px;
+          }
+        }
+        @include flex(row, flex-start, center);
+      }
+    }
+
+    .image {
+      border-radius: 15px;
+      &.canada {
+        background-image: url("/images/locations/tablet/image-map-canada.png");
+      }
+      &.australia {
+        background-image: url("/images/locations/tablet/image-map-australia.png");
+      }
+      &.uk {
+        background-image: url("/images/locations/tablet/image-map-uk.png");
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .main {
+    gap: 32px;
+  }
+
+  .locations {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+  }
+
+  .card {
+    @include flex(row, space-between, center);
+
+    &:not(:nth-child(3)) {
+      .text {
+        order: 0;
+      }
+    }
+
+    .text {
+      margin-top: 0;
+      padding: 88px 95px;
+      width: 730px;
+
+      address {
+        @include flex(row, flex-start, center);
+      }
+    }
+
+    .image {
+      height: 320px;
+      width: 350px;
+      &.canada {
+        background-image: url("/images/locations/desktop/image-map-canada.png");
+      }
+      &.australia {
+        background-image: url("/images/locations/desktop/image-map-australia.png");
+      }
+      &.uk {
+        background-image: url("/images/locations/desktop/image-map-united-kingdom.png");
+      }
+    }
+  }
+}

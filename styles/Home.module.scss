@@ -1,11 +1,8 @@
 @import "./variables.scss", "./mixins.scss";
 
-.home {
-  margin-bottom: 120px;
-}
-
 .hero {
   position: relative;
+  max-height: 843px;
   &::after {
     content: "";
     width: 100%;

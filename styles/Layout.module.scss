@@ -18,7 +18,8 @@
   left: -9999px;
 }
 
-.about,
+.categories,
+.otherCategories,
 .traits {
   margin: 0 $mobile-gutters;
 }
@@ -32,7 +33,8 @@
     padding: 0 $tablet-gutters 0;
   }
 
-  .about,
+  .otherCategories,
+  .categories,
   .traits {
     margin: 0;
   }
@@ -43,14 +45,22 @@
     padding: 0 $desktop-gutters 0;
   }
 
-  .about {
+  .categories {
     display: grid;
     grid-template-columns: 50% auto;
     gap: 0 24px;
   }
 
+  .otherCategories,
   .traits {
     display: grid;
+  }
+
+  .otherCategories {
+    gap: 0 30px;
+  }
+
+  .traits {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }

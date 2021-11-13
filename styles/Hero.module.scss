@@ -2,9 +2,13 @@
 
 .hero {
   background-color: $peach;
-
   color: $white;
   overflow: hidden;
   text-align: center;
-  max-height: 843px;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .hero {
+    border-radius: 15px;
+  }
 }

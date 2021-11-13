@@ -26,6 +26,7 @@
   @include flex(column, center, center);
   border-radius: 15px;
   overflow: hidden;
+
   .text {
     order: 2;
     text-align: center;
@@ -34,7 +35,7 @@
     min-width: 100%;
     h3 {
       color: $peach;
-      text-transform: uppercase;
+
       margin-bottom: 16px;
     }
   }

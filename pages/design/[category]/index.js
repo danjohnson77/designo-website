@@ -2,21 +2,23 @@ import layoutStyles from "../../../styles/Layout.module.scss";
 import styles from "../../../styles/Design.module.scss";
 import Hero from "../../../components/sections/Hero";
 import DesignCard from "../../../components/sections/DesignCard";
+import CategoryCard from "../../../components/sections/CategoryCard";
 
-const index = ({ data, category }) => {
+const index = ({ data, category, others }) => {
   const renderProjects = () => {
     return data.projects.map((project, i) => {
+      const { title, subtitle, image } = project;
       return (
-        <li>
-          <DesignCard
-            title={project.title}
-            subtitle={project.subtitle}
-            image={project.image}
-            category={category}
-            key={i}
-          />
+        <li key={i}>
+          <DesignCard title={title} subtitle={subtitle} image={image} category={category} />
         </li>
       );
+    });
+  };
+
+  const renderOtherCategories = (others) => {
+    return others.map((cat, i) => {
+      return <CategoryCard title={`${cat} DESIGN`} category={cat} key={i} />;
     });
   };
 
@@ -28,6 +30,7 @@ const index = ({ data, category }) => {
       </Hero>
       <h2 className={layoutStyles.hidden}>Projects</h2>
       <ul className={styles.projectList}>{renderProjects()}</ul>
+      <div className={layoutStyles.otherCategories}>{renderOtherCategories(others)}</div>
     </main>
   );
 };
@@ -132,7 +135,11 @@ const pages = {
 };
 
 export async function getStaticProps({ params }) {
-  return { props: { data: pages[params.category], category: params.category }, revalidate: 10 };
+  const otherCategories = Object.keys(pages).filter((page) => page !== params.category);
+  return {
+    props: { data: pages[params.category], category: params.category, others: otherCategories },
+    revalidate: 10,
+  };
 }
 
 export async function getStaticPaths() {

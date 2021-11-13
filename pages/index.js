@@ -2,8 +2,9 @@ import styles from "../styles/Home.module.scss";
 import layoutStyles from "../styles/Layout.module.scss";
 import traitStyles from "../styles/Trait.module.scss";
 import Hero from "../components/sections/Hero";
-import AboutCard from "../components/sections/AboutCard";
+import CategoryCard from "../components/sections/CategoryCard";
 import TraitCard from "../components/sections/TraitCard";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,16 +16,18 @@ export default function Home() {
             With over 10 years in the industry, we are experienced in creating fully responsive websites, app design,
             and engaging brand experiences. Find out more about our services.
           </p>
-          <button>LEARN MORE</button>
+          <Link href="/about">
+            <button>LEARN MORE</button>
+          </Link>
         </div>
         <div className={styles.phoneImg}>
           <img src="/images/image-hero-phone.png" alt="" />
         </div>
       </Hero>
-      <div className={layoutStyles.about}>
-        <AboutCard title="WEB DESIGN" category="web" />
-        <AboutCard title="APP DESIGN" category="app" />
-        <AboutCard title="GRAPHIC DESIGN" category="graphic" />
+      <div className={layoutStyles.categories}>
+        <CategoryCard title="WEB DESIGN" category="web" />
+        <CategoryCard title="APP DESIGN" category="app" />
+        <CategoryCard title="GRAPHIC DESIGN" category="graphic" />
       </div>
 
       <div className={layoutStyles.traits}>

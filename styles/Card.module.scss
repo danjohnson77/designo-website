@@ -1,0 +1,10 @@
+@import "./variables.scss", "./mixins.scss";
+
+.card {
+  background-color: $card-bg;
+  text-align: center;
+  h2 {
+    color: $peach;
+    margin-bottom: $mobile-gutters;
+  }
+}
