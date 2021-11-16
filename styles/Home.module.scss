@@ -1,5 +1,13 @@
 @import "./variables.scss", "./mixins.scss";
 
+.home {
+  &::before {
+    @include bodyCircle;
+    left: 0px;
+    top: 320px;
+  }
+}
+
 .hero {
   position: relative;
   max-height: 843px;

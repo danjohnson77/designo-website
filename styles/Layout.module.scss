@@ -4,12 +4,6 @@
   max-width: $desktop-max;
   position: relative;
   margin: 0 auto;
-
-  &::before {
-    @include bodyCircle;
-    left: 0px;
-    top: 475px;
-  }
 }
 
 .outerGrid {
