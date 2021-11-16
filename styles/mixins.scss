@@ -1,3 +1,5 @@
+@import "./variables.scss", "./functions.scss";
+
 @mixin flex($dir: row, $justify: flex-start, $align: center) {
   display: flex;
   flex-direction: $dir;
@@ -37,4 +39,23 @@
   position: absolute;
   top: -9999px;
   left: -9999px;
+}
+
+@mixin button($bg: $white) {
+  color: set-button-color($bg);
+  background-color: set-button-bg($bg);
+  border-radius: $button-radius;
+  border: 0;
+  letter-spacing: 1px;
+  font-size: clamp(15px, 4vw, 16px);
+  line-height: 21.68px;
+  padding: 17px 25px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  z-index: 1;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $light-peach;
+    color: $white;
+  }
 }

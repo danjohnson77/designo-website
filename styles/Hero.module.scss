@@ -9,6 +9,6 @@
 
 @media screen and (min-width: $tablet-breakpoint) {
   .hero {
-    border-radius: 15px;
+    border-radius: $border-radius;
   }
 }

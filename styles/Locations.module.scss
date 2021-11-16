@@ -42,10 +42,8 @@
 
     a {
       order: 3;
-    }
-    a > button {
-      color: set-button-color($white);
-      background-color: set-button-bg($white);
+
+      @include button($white);
       &:hover {
         background-color: $light-peach;
         color: $white;
@@ -103,7 +101,7 @@
       background-color: $card-bg;
       width: 100%;
       margin-top: 24px;
-      border-radius: 15px;
+      border-radius: $border-radius;
       text-align: left;
       padding: 75px 88px;
       address {
@@ -119,7 +117,7 @@
     }
 
     .image {
-      border-radius: 15px;
+      border-radius: $border-radius;
       &.canada {
         background-image: url("/images/locations/tablet/image-map-canada.png");
       }

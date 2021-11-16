@@ -29,7 +29,7 @@
 .card {
   margin: 0 $mobile-gutters;
   @include flex(column, center, center);
-  border-radius: 15px;
+  border-radius: $border-radius;
   overflow: hidden;
 
   .text {
@@ -58,7 +58,7 @@
 
 @media screen and (min-width: $tablet-breakpoint) {
   .hero {
-    border-radius: 15px;
+    border-radius: $border-radius;
   }
   .card {
     display: grid;

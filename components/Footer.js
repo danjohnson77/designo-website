@@ -15,8 +15,8 @@ const Footer = () => {
               grow.
             </p>
           </div>
-          <a href="/contact">
-            <button>GET IN TOUCH</button>
+          <a href="/contact" className={styles.button}>
+            GET IN TOUCH
           </a>
         </div>
       </div>

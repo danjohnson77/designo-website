@@ -36,7 +36,7 @@
 
 @media (min-width: $tablet-breakpoint) {
   .hero {
-    border-radius: 15px;
+    border-radius: $border-radius;
     &::after {
       left: 170px;
     }

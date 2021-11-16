@@ -9,8 +9,8 @@ const LocationCard = ({ title, image }) => {
         <img src={image} alt={`${title} image`} />
       </div>
 
-      <a href="/locations">
-        <button>SEE LOCATION</button>
+      <a href="/locations" className={styles.button}>
+        SEE LOCATION
       </a>
     </section>
   );
