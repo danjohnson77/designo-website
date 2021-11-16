@@ -59,3 +59,15 @@
     color: $white;
   }
 }
+
+@mixin bodyCircle {
+  position: absolute;
+  width: 1006px;
+  height: 594px;
+  content: "";
+  z-index: -1;
+  background: #f1f3f5;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  border-radius: 297px 297px 297px 0px;
+}
