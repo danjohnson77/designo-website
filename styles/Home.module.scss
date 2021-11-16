@@ -81,7 +81,7 @@
 
     .action {
       padding: 0;
-      max-width: 520px;
+      max-width: min(540px, 37.5vw);
       margin: 145px 95px;
       @include flex(column, center, flex-start);
       text-align: left;
@@ -93,7 +93,7 @@
       }
 
       p {
-        margin: 11px 0 40px 0;
+        margin: 40px 0;
       }
     }
     .phoneImg {
