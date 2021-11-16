@@ -1,13 +1,23 @@
 import styles from "../styles/Header.module.scss";
 import Logo from "./Logo";
 import Nav from "./Nav";
+import { useRef } from "react";
 
 const Header = () => {
+  const checkboxRef = useRef();
+
+  const handleClick = (header) => {
+    if (header) {
+      checkboxRef.current.checked = false;
+    }
+  };
+
   return (
     <header className={styles.header}>
       <Logo />
       <div className={styles.toggle}>
-        <input type="checkbox" name="toggle" />
+        <label htmlFor="toggle">Open Navigation Menu</label>
+        <input type="checkbox" name="toggle" ref={checkboxRef} id="toggle" />
         <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg" className={styles.hamburger}>
           <g fill="#1D1C1E" fillRule="evenodd">
             <path d="M0 0h24v4H0zM0 8h24v4H0zM0 16h24v4H0z" />
@@ -20,7 +30,7 @@ const Header = () => {
             fillRule="evenodd"
           />
         </svg>
-        <Nav />
+        <Nav handleClick={handleClick} header={true} />
       </div>
     </header>
   );

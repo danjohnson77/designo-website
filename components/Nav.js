@@ -1,8 +1,13 @@
 import Link from "next/link";
 
-const Nav = ({ styleProp = null }) => {
+const Nav = ({ styleProp = null, handleClick, header = false }) => {
   return (
-    <nav className={styleProp}>
+    <nav
+      className={styleProp}
+      onClick={() => {
+        handleClick(header);
+      }}
+    >
       <ul>
         <li>
           <Link href="/about">OUR COMPANY</Link>

@@ -1,7 +1,7 @@
 @import "./variables.scss", "./mixins.scss";
 
 .contact {
-  padding: 80px 0;
+  padding: 80px $mobile-gutters;
   background-image: url("/bg/contact/mobile/bg-pattern-hero-contact-mobile.svg");
 
   h1 {
@@ -15,33 +15,82 @@
     fieldset {
       border: none;
       width: 100%;
-      input,
+      input:not([type="submit"]),
       textarea {
         color: $white;
         background-color: transparent;
         width: 100%;
         border: none;
         border-bottom: 1px solid $white;
-        opacity: 0.5;
-
-        &:focus,
-        &:hover {
-          opacity: 1;
-          border: none;
-          border-bottom: 3px solid $white;
-        }
       }
 
-      label {
-        @include flex(column, center, flex-start);
-        margin: 25px 0 0 14px;
-        opacity: 0.5;
-        mix-blend-mode: normal;
+      .formInput {
+        @include flex(column, flex-start, flex-start);
+        width: 100%;
+        position: relative;
+        margin-top: 25px;
+
+        &.valid,
+        input:focus,
+        textarea:focus {
+          input,
+          textarea {
+            opacity: 1;
+          }
+          label {
+            @include hidden;
+          }
+        }
+        input:focus + label {
+          @include hidden;
+        }
+        &.invalid {
+          .error {
+            display: block;
+          }
+        }
+
+        input,
+        label,
+        textarea {
+          opacity: 0.5;
+          text-indent: 13px;
+        }
+
+        input,
+        textarea {
+          order: 2;
+          padding-bottom: 13px;
+        }
+
+        label {
+          position: absolute;
+        }
+
+        .error {
+          position: absolute;
+          right: 0;
+          display: none;
+          p {
+            font-size: 12px;
+            font-style: italic;
+            span {
+              content: "";
+              background-image: url("/icons/icon-error.svg");
+              width: 20px;
+              height: 20px;
+              transform: translateY(5px);
+              display: inline-block;
+              margin-left: 8px;
+            }
+          }
+        }
       }
     }
 
-    button {
+    input[type="submit"] {
       margin-top: 40px;
+      text-align: right;
     }
   }
 }

@@ -10,6 +10,10 @@
     margin: 0 auto;
   }
 
+  h2 {
+    font-size: clamp(32px, 8.53vw, 40px);
+  }
+
   .top {
     .action {
       background-color: $peach;
@@ -32,12 +36,6 @@
         z-index: 0;
 
         background-position: center;
-      }
-
-      h2 {
-        font-size: 32px;
-        line-height: 36px;
-        font-weight: 500;
       }
 
       p {
@@ -127,24 +125,41 @@
 
 @media screen and (min-width: $tablet-breakpoint) {
   .footer {
-    background: linear-gradient(to top, $black 0%, $black 65%, $white 65%, $white 100%);
+    background: linear-gradient(to top, $black 0%, $black 60%, $white 60%, $white 100%);
+
+    .top,
+    .bottom {
+      padding: 0 $tablet-gutters;
+    }
+
     .top {
       .action {
+        margin: 0;
+        h2 {
+          font-size: clamp(32px, 5.2083vw, 40px);
+          line-height: 40px;
+          max-width: 300px;
+          margin: 0 auto;
+        }
+
+        p {
+          max-width: 450px;
+          margin: 32px auto;
+        }
+
         &::after {
           top: -117px;
           left: -20px;
         }
-        padding: 80px $tablet-gutters;
-        margin: 0 $tablet-gutters;
       }
     }
 
     .bottom {
+      padding: 80px $tablet-gutters;
       div {
         width: 100%;
       }
 
-      padding: 80px $tablet-gutters;
       div:first-child {
         @include flex(row, space-between, center);
         flex-wrap: wrap;
@@ -164,8 +179,6 @@
               &:not(:last-child) {
                 margin-bottom: 0;
                 margin-right: 42px;
-              }
-              a {
               }
             }
           }
@@ -205,13 +218,22 @@
 @media screen and (min-width: $desktop-breakpoint) {
   .footer {
     .top {
+      padding: 0 $desktop-gutters;
       .action {
         @include flex(row, space-between, center);
+
         padding: 72px 96px;
-        margin: 0 $desktop-gutters;
+
         &::after {
           top: -146px;
           left: 235px;
+        }
+        h2 {
+          width: 300px;
+          margin: 0;
+        }
+        p {
+          width: 426px;
         }
       }
       div {

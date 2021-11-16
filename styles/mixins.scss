@@ -32,3 +32,9 @@
   height: 100%;
   top: 0;
 }
+
+@mixin hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

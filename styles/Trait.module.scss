@@ -23,23 +23,34 @@
     margin: 0 auto;
     div {
       @include circleBg;
-
-      &:nth-child(1) {
-        transform: matrix(-1, 0, 0, 1, 0, 0);
-      }
-
-      &:nth-child(2) {
-        transform: matrix(0, 1, 1, 0, 0, 0);
-      }
-
-      &:nth-child(3) {
-        transform: matrix(0, -1, -1, 0, 0, 0);
-      }
     }
 
     img {
       position: relative;
       z-index: 2;
+    }
+  }
+
+  &:nth-child(2) {
+    .imgWrap {
+      div {
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .imgWrap {
+      div {
+        transform: matrix(0, 1, 1, 0, 0, 0);
+      }
+    }
+  }
+  &:nth-child(4) {
+    .imgWrap {
+      div {
+        transform: matrix(0, -1, -1, 0, 0, 0);
+      }
     }
   }
 }

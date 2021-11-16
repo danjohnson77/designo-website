@@ -3,10 +3,15 @@
 .hero {
   padding: 105px $mobile-gutters;
   position: relative;
-  z-index: 1;
 
   h1 {
     margin-bottom: 24px;
+  }
+
+  h1,
+  p {
+    z-index: 1;
+    position: relative;
   }
 
   &::after {
@@ -35,7 +40,7 @@
     min-width: 100%;
     h3 {
       color: $peach;
-
+      text-transform: uppercase;
       margin-bottom: 16px;
     }
   }
@@ -65,15 +70,6 @@
       background-color: #fdf3f0;
       padding: 109px 41px;
       height: 100%;
-
-      h3 {
-        color: $peach;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
-    }
-
-    img {
     }
   }
 }

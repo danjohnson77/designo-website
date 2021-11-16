@@ -42,18 +42,26 @@
       width: 100%;
       height: 320px;
     }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
   }
 
   .cardOne {
     .image {
       background-image: url("/images/about/mobile/image-world-class-talent.jpg");
     }
+    margin-bottom: 120px;
   }
 
   .cardTwo {
     .image {
       background-image: url("/images/about/mobile/image-real-deal.jpg");
     }
+    margin-top: 120px;
   }
 }
 
@@ -74,12 +82,14 @@
     }
 
     .cardOne {
+      margin-bottom: 0;
       .image {
         background-image: url("/images/about/tablet/image-world-class-talent.jpg");
       }
     }
 
     .cardTwo {
+      margin-top: 0;
       .image {
         background-image: url("/images/about/tablet/image-real-deal.jpg");
       }

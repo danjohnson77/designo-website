@@ -8,7 +8,7 @@ const DesignCard = ({ title, subtitle, image, category }) => {
         <h3>{title}</h3>
         <p>{subtitle}</p>
       </div>
-      <img src={`/images/design/${category}/${image}`} />
+      <img src={`/images/design/${category}/${image}`} alt={`${title} image`} />
     </section>
   );
 };

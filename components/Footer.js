@@ -15,7 +15,9 @@ const Footer = () => {
               grow.
             </p>
           </div>
-          <button>GET IN TOUCH</button>
+          <a href="/contact">
+            <button>GET IN TOUCH</button>
+          </a>
         </div>
       </div>
       <div className={styles.bottom}>
@@ -32,7 +34,12 @@ const Footer = () => {
             </div>
             <div>
               <p className={styles.strong}> Contact Us (Central Office) </p>
-              <a href="tel:+12538638967">P : +1 253-863-8967</a> <a href="contact@designo.co">M : contact@designo.co</a>
+              <a href="tel:+12538638967" rel="noopener noreferrer">
+                P : +1 253-863-8967
+              </a>
+              <a href="contact@designo.co" rel="noopener noreferrer">
+                M : contact@designo.co
+              </a>
             </div>
           </address>
           <Socials />

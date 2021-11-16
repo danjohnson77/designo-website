@@ -1,8 +1,9 @@
 import styles from "../../styles/Category.module.scss";
+import layoutStyles from "../../styles/Layout.module.scss";
 
 const CategoryCard = ({ title, category }) => {
   return (
-    <section className={`${styles[category]} ${styles.category}`}>
+    <section className={`${layoutStyles[category]} ${styles[category]} ${styles.category}`}>
       <h2>{title}</h2>
       <a href={`/design/${category}`}>
         VIEW PROJECTS{" "}

@@ -6,10 +6,12 @@ const LocationCard = ({ title, image }) => {
       <h3>{title}</h3>
       <div className={styles.imgWrap}>
         <div className={styles.passionate}></div>
-        <img src={image} />
+        <img src={image} alt={`${title} image`} />
       </div>
 
-      <button>SEE LOCATION</button>
+      <a href="/locations">
+        <button>SEE LOCATION</button>
+      </a>
     </section>
   );
 };

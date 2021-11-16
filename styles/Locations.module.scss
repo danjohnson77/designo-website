@@ -1,4 +1,4 @@
-@import "./variables.scss", "./mixins.scss";
+@import "./variables.scss", "./mixins.scss", "./functions.scss";
 
 .locations {
   display: grid;
@@ -15,14 +15,41 @@
 
       div {
         @include circleBg;
-        &:nth-of-type(2) {
-          display: none;
+      }
+    }
+    &:nth-child(2) {
+      .imgWrap {
+        div {
+          transform: matrix(0, -1, -1, 0, 0, 0);
         }
       }
     }
 
-    button {
+    &:nth-child(3) {
+      .imgWrap {
+        div {
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+      }
+    }
+    &:nth-child(4) {
+      .imgWrap {
+        div {
+          transform: matrix(0, 1, 1, 0, 0, 0);
+        }
+      }
+    }
+
+    a {
       order: 3;
+    }
+    a > button {
+      color: set-button-color($white);
+      background-color: set-button-bg($white);
+      &:hover {
+        background-color: $light-peach;
+        color: $white;
+      }
     }
   }
 }

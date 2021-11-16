@@ -35,7 +35,7 @@ export default function Home() {
         <TraitCard>
           <div className={traitStyles.imgWrap}>
             <div className={traitStyles.passionate}></div>
-            <img src="/images/home/illustration-passionate.svg" />
+            <img src="/images/home/illustration-passionate.svg" alt="Smiling man at laptop" />
           </div>
           <div className={traitStyles.textWrap}>
             <h3>PASSIONATE</h3>
@@ -49,7 +49,7 @@ export default function Home() {
         <TraitCard>
           <div className={traitStyles.imgWrap}>
             <div className={traitStyles.resourceful}></div>
-            <img src="/images/home/illustration-resourceful.svg" />
+            <img src="/images/home/illustration-resourceful.svg" alt="Person working at desk" />
           </div>
           <div className={traitStyles.textWrap}>
             <h3>RESOURCEFUL</h3>
@@ -62,7 +62,7 @@ export default function Home() {
         <TraitCard>
           <div className={traitStyles.imgWrap}>
             <div className={traitStyles.friendly}></div>
-            <img src="/images/home/illustration-friendly.svg" />
+            <img src="/images/home/illustration-friendly.svg" alt="Two people giving a presentation" />
           </div>
           <div className={traitStyles.textWrap}>
             <h3>FRIENDLY</h3>

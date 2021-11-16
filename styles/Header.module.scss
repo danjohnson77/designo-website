@@ -21,7 +21,9 @@
     height: 100%;
     top: 0;
     left: 0;
-
+    label {
+      @include hidden;
+    }
     input[type="checkbox"],
     svg {
       position: absolute;
