@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const Nav = ({ styleProp = null, handleClick, header = false }) => {
   return (
     <nav
@@ -10,13 +8,19 @@ const Nav = ({ styleProp = null, handleClick, header = false }) => {
     >
       <ul>
         <li>
-          <Link href="/about">OUR COMPANY</Link>
+          <a href="/about" aria-label="Link to about page">
+            OUR COMPANY
+          </a>
         </li>
         <li>
-          <Link href="/locations">LOCATIONS</Link>
+          <a href="/locations" aria-label="link to locations page">
+            LOCATIONS
+          </a>
         </li>
         <li>
-          <Link href="/contact">CONTACT</Link>
+          <a href="/contact" aria-label="link to contact page">
+            CONTACT
+          </a>
         </li>
       </ul>
     </nav>
