@@ -5,7 +5,7 @@ const Nav = ({ styleProp = null, handleClick, header = false }) => {
       onClick={() => {
         handleClick(header);
       }}
-      role={`${header ? "header-navigation" : "footer-navigation"}`}
+      role="navigation"
     >
       <ul>
         <li>
