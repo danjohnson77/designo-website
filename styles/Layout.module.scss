@@ -50,6 +50,10 @@
     padding: 0 $desktop-gutters 0;
   }
 
+  .outerGrid {
+    gap: 160px;
+  }
+
   .categories {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
