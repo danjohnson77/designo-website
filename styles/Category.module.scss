@@ -76,6 +76,8 @@
 
 @media (min-width: $desktop-breakpoint) {
   .category {
+    height: 308px;
+
     &.web {
       background-image: url("../public/bg/home/desktop/image-web-design-large.jpg");
     }
