@@ -8,17 +8,26 @@ const Nav = ({ styleProp = null, handleClick, header = false }) => {
     >
       <ul>
         <li>
-          <a href="/about" aria-label="Link to about page">
+          <div id="nav-label-1" style={{ position: "absolute", top: "-9999px", left: "-9999px" }}>
+            About Page
+          </div>
+          <a href="/about" aria-label="nav-label-1">
             OUR COMPANY
           </a>
         </li>
         <li>
-          <a href="/locations" aria-label="link to locations page">
+          <div id="nav-label-2" style={{ position: "absolute", top: "-9999px", left: "-9999px" }}>
+            Locations Page
+          </div>
+          <a href="/locations" aria-label="nav-label-2">
             LOCATIONS
           </a>
         </li>
         <li>
-          <a href="/contact" aria-label="link to contact page">
+          <div id="nav-label-3" style={{ position: "absolute", top: "-9999px", left: "-9999px" }}>
+            Contact Page
+          </div>
+          <a href="/contact" aria-label="nav-label-3">
             CONTACT
           </a>
         </li>
