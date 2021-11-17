@@ -5,6 +5,7 @@ const Nav = ({ styleProp = null, handleClick, header = false }) => {
       onClick={() => {
         handleClick(header);
       }}
+      ariaLabel={`${header ? "primary" : "footer"}`}
     >
       <ul>
         <li>
